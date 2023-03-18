@@ -4,7 +4,14 @@ from django.http import HttpResponse
 
 def my_path(request):
     name = request.POST.get('name', 'Unknown')
-    return render(request, 'my_path.html', {'name': name})
+    return render(
+        request, 
+        'my_path.html', 
+        {
+            'name': name, 
+            'data': [1, 2, 3, 4, 5],
+        },
+    )
 
 
 def add(request, n1, n2):
