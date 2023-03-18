@@ -9,3 +9,15 @@ def my_path(request):
 
 def add(request, n1, n2):
     return HttpResponse(n1 + n2)
+
+
+def minus(request, n1, n2):
+    return HttpResponse(n1 - n2)
+
+
+def multiplied_by(request, n1, n2):
+    return HttpResponse(n1 * n2)
+
+
+def divided_by(request, n1, n2):
+    return HttpResponse(n1 / n2)

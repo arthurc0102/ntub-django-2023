@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import my_path, add
+from core.views import my_path, add, minus, multiplied_by, divided_by
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('my-path/', my_path),
     path('add/<int:n1>/<int:n2>/', add),
+    path('minus/<int:n1>/<int:n2>/', minus),
+    path('multiplied_by/<int:n1>/<int:n2>/', multiplied_by),
+    path('divided_by/<int:n1>/<int:n2>/', divided_by),
 ]
