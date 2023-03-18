@@ -10,6 +10,7 @@ def my_path(request):
         {
             'name': name, 
             'data': [1, 2, 3, 4, 5],
+            'ok': True,
         },
     )
 
