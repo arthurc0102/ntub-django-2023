@@ -2,4 +2,5 @@ from django.http import HttpResponse
 
 
 def my_path(request):
-    return HttpResponse('<h1>Hello World!!!</h1>')
+    name = request.GET['name']
+    return HttpResponse(f'<h1>Hello World {name}!!!</h1>')
