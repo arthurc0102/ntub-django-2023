@@ -1,6 +1,6 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def my_path(request):
     name = request.GET.get('name', 'Unknown')
-    return HttpResponse(f'<form method="GET"><input type="text" name="name"><input type="submit" value="send"></form><h1>Hello World {name}!!!</h1>')
+    return render(request, 'my_path.html', {'name': name})
