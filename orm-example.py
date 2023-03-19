@@ -16,3 +16,11 @@ post.save()
 # 建立 Post 方法
 
 Post.objects.create(title='Title003', content='Content003')
+
+# 查詢 Post
+
+Post.objects.get(id=9)
+Post.objects.get(title='Title003')
+Post.objects.get(id=9, title='Title003')
+Post.objects.get(id=10, title='Title003')
+Post.objects.get(title='1111')
