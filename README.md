@@ -12,3 +12,8 @@
 啟動伺服器：`python manage.py runserver` (用瀏覽器訪問 <http://127.0.0.1:8000>)
 
 建立 Django APP：`python manage.py startapp <app name>`
+
+
+依照 models.py 產生 migrations 檔案：`python manage.py makemigrations`
+
+依照 migrations 建立資料庫：`python manage.py migrate`
