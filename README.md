@@ -21,3 +21,5 @@
 建立超級使用者：`python manage.py createsuperuser`
 
 安裝套件到 dev 這個 group 中：`poetry add --group dev <package name>` (例如：`ipython`)
+
+啟動 Django 的互動環境（Python 直譯環境 + Django Setup）：`python manage.py shell`
