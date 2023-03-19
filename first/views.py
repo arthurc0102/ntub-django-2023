@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from first.models import Post
 from first.forms import PostForm
@@ -16,5 +16,9 @@ def post_detail(request, post_id):
 
 
 def post_create(request):
-    form = PostForm()
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('post_list')
+
     return render(request, 'post_create.html', {'form': form})
