@@ -1,5 +1,5 @@
 <ul>
   {% for post in posts %}
-    <li>#{{ post.id }} | {{ post.title }}</li>
+    <li>#{{ post.id }} | {{ post.title }} | <a href="/post-detail/{{post.id}}">detail</a></li>
   {% endfor %}
 </ul>

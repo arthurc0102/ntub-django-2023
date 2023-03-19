@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from core.views import my_path, add, minus, multiplied_by, divided_by
-from first.views import post_list
+from first.views import post_list, post_detail
 
 
 urlpatterns = [
@@ -28,4 +28,5 @@ urlpatterns = [
     path('multiplied_by/<int:n1>/<int:n2>/', multiplied_by),
     path('divided_by/<int:n1>/<int:n2>/', divided_by),
     path('post-list/', post_list),
+    path('post-detail/<int:post_id>/', post_detail),
 ]
