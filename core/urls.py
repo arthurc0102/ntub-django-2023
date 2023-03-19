@@ -28,5 +28,5 @@ urlpatterns = [
     path('multiplied_by/<int:n1>/<int:n2>/', multiplied_by),
     path('divided_by/<int:n1>/<int:n2>/', divided_by),
     path('post-list/', post_list),
-    path('post-detail/<int:post_id>/', post_detail),
+    path('post-detail/<int:post_id>/', post_detail, name='post_detail'),
 ]
