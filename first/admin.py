@@ -8,3 +8,4 @@ from first.models import Post
 class PostAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
     search_fields = ('title', 'content')
+    list_filter = ('is_public',)
