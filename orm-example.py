@@ -38,3 +38,10 @@ Post.objects.filter(title='1111').first()
 Post.objects.filter(title='1111').last()
 Post.objects.filter(title='1111')[0]
 Post.objects.filter(title='1111')[0:2]
+
+# 全部的 Post
+
+Post.objects.all()
+Post.objects.order_by('title')
+Post.objects.order_by('-title')
+Post.objects.order_by('?')
