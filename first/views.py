@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from first.models import Post
+from first.forms import PostForm
 
 
 def post_list(request):
@@ -15,4 +16,5 @@ def post_detail(request, post_id):
 
 
 def post_create(request):
-    return render(request, 'post_create.html')
+    form = PostForm()
+    return render(request, 'post_create.html', {'form': form})
