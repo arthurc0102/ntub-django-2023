@@ -47,3 +47,21 @@ Post.objects.order_by('-title')
 Post.objects.order_by('?')
 
 Post.objects.filter(title='1111').order_by('id')
+
+# 修改 Post
+
+post = Post.objects.get(id=9)
+print(post.title)
+post.title = 'Title003 - 修改過'
+post.save()
+
+posts = Post.objects.filter(title='1111')
+posts.update(title='2222')
+
+# 刪除 Post
+
+post = Post.objects.get(id=9)
+post.delete()
+
+posts = Post.objects.filter(title='2222')
+posts.delete()
