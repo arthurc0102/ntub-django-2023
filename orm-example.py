@@ -12,3 +12,7 @@ post.save()
 
 post = Post(title='Title02', content='Content01')
 post.save()
+
+# 建立 Post 方法
+
+Post.objects.create(title='Title003', content='Content003')
