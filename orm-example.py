@@ -45,3 +45,5 @@ Post.objects.all()
 Post.objects.order_by('title')
 Post.objects.order_by('-title')
 Post.objects.order_by('?')
+
+Post.objects.filter(title='1111').order_by('id')
