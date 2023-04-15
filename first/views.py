@@ -22,3 +22,7 @@ def post_create(request):
         return redirect('post_list')
 
     return render(request, 'post_create.html', {'form': form})
+
+
+def post_update(request, post_id):
+    return render(request, 'post_update.html')

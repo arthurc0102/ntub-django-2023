@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from core.views import my_path, add, minus, multiplied_by, divided_by
-from first.views import post_list, post_detail, post_create
+from first.views import post_list, post_detail, post_create, post_update
 
 
 urlpatterns = [
@@ -30,4 +30,5 @@ urlpatterns = [
     path('post-list/', post_list, name='post_list'),
     path('post-detail/<int:post_id>/', post_detail, name='post_detail'),
     path('post-create/', post_create, name='post_create'),
+    path('post-update/<int:post_id>/', post_update, name='post_update'),
 ]
