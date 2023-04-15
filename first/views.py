@@ -33,3 +33,9 @@ def post_update(request, post_id):
         return redirect('post_detail', post_id)
 
     return render(request, 'post_update.html', {'form': form})
+
+
+def post_delete(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    post.delete()
+    return redirect('post_list')
