@@ -17,7 +17,13 @@
         <div class="card-body">
           <h5 class="card-title">{{ post.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">作者</h6>
-          <p class="card-text">{{ post.content | linebreaks }}</p>
+          <p class="card-text">
+            {% if post.is_public %}
+              {{ post.content | linebreaks }}
+            {% else %}
+              內容不公開
+            {% endif %}
+          </p>
         </div>
         <div class="card-footer text-end">
           <a href="{% url 'post_update' post.id %}" class="card-link">編輯</a>
