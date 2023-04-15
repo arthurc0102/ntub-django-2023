@@ -7,7 +7,15 @@
     <title>Django Project</title>
   </head>
   <body>
-    <p>Message</p>
-    {% block body %}{% endblock body %}
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% block body %}
+    {% endblock body %}
   </body>
 </html>

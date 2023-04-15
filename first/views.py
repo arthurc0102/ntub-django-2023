@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 
 from first.models import Post
 from first.forms import PostForm, PostDeleteConfirmForm
@@ -19,6 +20,7 @@ def post_create(request):
     form = PostForm(request.POST or None)
     if form.is_valid():
         form.save()
+        messages.success(request, '文章建立成功')
         return redirect("post_list")
 
     return render(request, "post_create.html", {"form": form})
