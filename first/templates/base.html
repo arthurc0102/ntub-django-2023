@@ -12,10 +12,18 @@
     {% bootstrap_css %}
   </head>
   <body>
-    {% bootstrap_messages %}
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Django Project</span>
+      </div>
+    </nav>
+ 
+    <div class="container pt-3">
+      {% bootstrap_messages %}
 
-    {% block body %}
-    {% endblock body %}
+      {% block body %}
+      {% endblock body %}
+    </div>
 
 
     {% bootstrap_javascript %}
