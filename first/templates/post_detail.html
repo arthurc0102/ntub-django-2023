@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
-  id: {{ post.id }}
+  {% comment %} id: {{ post.id }}
   <br>
   title: {{ post.title }}
   <br>
@@ -9,5 +9,21 @@
   is_public: {{ post.is_public }}
   <br>
   <a href="{% url 'post_update' post.id %}">編輯</a>
-  <a href="{% url 'post_delete' post.id %}">刪除</a>
+  <a href="{% url 'post_delete' post.id %}">刪除</a> {% endcomment %}
+
+  <div class="row">
+    <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">作者</h6>
+          <p class="card-text">{{ post.content | linebreaks }}</p>
+        </div>
+        <div class="card-footer text-end">
+          <a href="{% url 'post_update' post.id %}" class="card-link">編輯</a>
+          <a href="{% url 'post_delete' post.id %}" class="card-link">刪除</a>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock body %}
