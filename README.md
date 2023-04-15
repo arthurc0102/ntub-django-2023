@@ -26,3 +26,5 @@
 
 安裝 djLint: `poetry add --group dev djlint`
 安裝 black: `poetry add --group dev black`
+
+安裝 django-bootstrap5: `poetry add django-bootstrap5`

@@ -182,6 +182,21 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-bootstrap5"
+version = "23.1"
+description = "Bootstrap 5 for Django"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "django-bootstrap5-23.1.tar.gz", hash = "sha256:3a3748b1ce1a2a73c2eca851c2926e7b6e5a317815e4da7ced6b1807c4792b1a"},
+    {file = "django_bootstrap5-23.1-py3-none-any.whl", hash = "sha256:d0b1997528b8a557968cf1ac7ff4c68659897779011a5a42816fb1ad9e57d6ae"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "djlint"
 version = "1.23.0"
 description = "HTML Template Linter and Formatter"
@@ -725,4 +740,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "b53c53ea8976f8fd406d8f07076c8ff5f1f111df5c58a789ddf17fef3d4a0259"
+content-hash = "0b48a6521e2e4aafab99c5b9c8fc07428f4e059ae39a10e80085b71fc967b745"
