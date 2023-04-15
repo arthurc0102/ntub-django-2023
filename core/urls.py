@@ -21,15 +21,15 @@ from first.views import post_list, post_detail, post_create, post_update, post_d
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('my-path/', my_path),
-    path('add/<int:n1>/<int:n2>/', add),
-    path('minus/<int:n1>/<int:n2>/', minus),
-    path('multiplied_by/<int:n1>/<int:n2>/', multiplied_by),
-    path('divided_by/<int:n1>/<int:n2>/', divided_by),
-    path('post-list/', post_list, name='post_list'),
-    path('post-detail/<int:post_id>/', post_detail, name='post_detail'),
-    path('post-create/', post_create, name='post_create'),
-    path('post-update/<int:post_id>/', post_update, name='post_update'),
-    path('post-delete/<int:post_id>/', post_delete, name='post_delete'),
+    path("admin/", admin.site.urls),
+    path("my-path/", my_path),
+    path("add/<int:n1>/<int:n2>/", add),
+    path("minus/<int:n1>/<int:n2>/", minus),
+    path("multiplied_by/<int:n1>/<int:n2>/", multiplied_by),
+    path("divided_by/<int:n1>/<int:n2>/", divided_by),
+    path("post-list/", post_list, name="post_list"),
+    path("post-detail/<int:post_id>/", post_detail, name="post_detail"),
+    path("post-create/", post_create, name="post_create"),
+    path("post-update/<int:post_id>/", post_update, name="post_update"),
+    path("post-delete/<int:post_id>/", post_delete, name="post_delete"),
 ]
