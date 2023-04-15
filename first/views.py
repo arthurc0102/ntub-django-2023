@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from first.models import Post
-from first.forms import PostForm
+from first.forms import PostForm, PostDeleteConfirmForm
 
 
 def post_list(request):
@@ -37,5 +37,10 @@ def post_update(request, post_id):
 
 def post_delete(request, post_id):
     post = get_object_or_404(Post, id=post_id)
-    post.delete()
-    return redirect('post_list')
+    
+    form = PostDeleteConfirmForm(request.POST or None)
+    if form.is_valid():
+        post.delete()
+        return redirect('post_list')
+
+    return render(request, 'post_delete.html', {'form': form})
