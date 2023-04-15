@@ -1,9 +1,13 @@
-<a href="{% url 'post_create' %}">發文</a>
-
-<ul>
-  {% for post in posts %}
-    <li>#{{ post.id }} | {{ post.title }} | <a href="{% url 'post_detail' post.id %}">detail</a></li>
-  {% empty %}
-    <li>沒有任何文章</li>
-  {% endfor %}
-</ul>
+{% extends 'base.html' %}
+{% block body %}
+  <a href="{% url 'post_create' %}">發文</a>
+  <ul>
+    {% for post in posts %}
+      <li>
+        #{{ post.id }} | {{ post.title }} | <a href="{% url 'post_detail' post.id %}">detail</a>
+      </li>
+    {% empty %}
+      <li>沒有任何文章</li>
+    {% endfor %}
+  </ul>
+{% endblock body %}

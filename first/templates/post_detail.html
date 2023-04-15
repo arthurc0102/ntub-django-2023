@@ -1,7 +1,13 @@
-id: {{ post.id }} <br>
-title: {{ post.title }} <br>
-content: {{ post.content | linebreaks }} <br>
-is_public: {{ post.is_public }} <br>
-
-<a href="{% url 'post_update' post.id %}">編輯</a>
-<a href="{% url 'post_delete' post.id %}">刪除</a>
+{% extends 'base.html' %}
+{% block body %}
+  id: {{ post.id }}
+  <br>
+  title: {{ post.title }}
+  <br>
+  content: {{ post.content | linebreaks }}
+  <br>
+  is_public: {{ post.is_public }}
+  <br>
+  <a href="{% url 'post_update' post.id %}">編輯</a>
+  <a href="{% url 'post_delete' post.id %}">刪除</a>
+{% endblock body %}

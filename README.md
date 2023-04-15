@@ -23,3 +23,5 @@
 安裝套件到 dev 這個 group 中：`poetry add --group dev <package name>` (例如：`ipython`)
 
 啟動 Django 的互動環境（Python 直譯環境 + Django Setup）：`python manage.py shell`
+
+安裝 djLint: `poetry add --group dev djlint`
