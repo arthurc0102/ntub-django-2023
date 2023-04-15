@@ -20,7 +20,7 @@ def post_create(request):
     form = PostForm(request.POST or None)
     if form.is_valid():
         form.save()
-        messages.success(request, '文章建立成功')
+        messages.success(request, "文章建立成功")
         return redirect("post_list")
 
     return render(request, "post_create.html", {"form": form})
@@ -32,6 +32,7 @@ def post_update(request, post_id):
     form = PostForm(request.POST or None, instance=post)
     if form.is_valid():
         form.save()
+        messages.success(request, "文章編輯成功")
         return redirect("post_detail", post_id)
 
     return render(request, "post_update.html", {"form": form})
@@ -43,6 +44,7 @@ def post_delete(request, post_id):
     form = PostDeleteConfirmForm(request.POST or None)
     if form.is_valid():
         post.delete()
+        messages.success(request, "文章刪除成功")
         return redirect("post_list")
 
     return render(request, "post_delete.html", {"form": form})
