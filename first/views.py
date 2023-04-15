@@ -25,4 +25,11 @@ def post_create(request):
 
 
 def post_update(request, post_id):
-    return render(request, 'post_update.html')
+    post = get_object_or_404(Post, id=post_id)
+
+    form = PostForm(request.POST or None, instance=post)
+    if form.is_valid():
+        form.save()
+        return redirect('post_detail', post_id)
+
+    return render(request, 'post_update.html', {'form': form})
