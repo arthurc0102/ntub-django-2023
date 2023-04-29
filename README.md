@@ -28,3 +28,7 @@
 安裝 black: `poetry add --group dev black`
 
 安裝 django-bootstrap5: `poetry add django-bootstrap5`
+
+安裝 django-extensions: `poetry add django-extensions`
+
+進入 Django Shell Plus: `python manage.py shell_plus --print-sql`

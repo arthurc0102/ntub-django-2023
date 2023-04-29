@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 第三方的 APP
     'django_bootstrap5',
+    'django_extensions',
     # 自己建立的 APP
     'first',
 ]

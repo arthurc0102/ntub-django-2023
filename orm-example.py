@@ -88,3 +88,19 @@ post.tags.remove(tag1)  # 將 tag1 從與此文章的關係刪除
 post.tags.clear()  # 清除此文章的所有標籤
 
 post.tags.set([tag2, tag3])  # 將此文章的標籤關係覆蓋成 tag2 與 tag3，結果與先 clear 再 add 相同
+
+
+# 獲取關聯資料
+
+for post in Post.objects.prefetch_related('tags'):  # 從一往多關係，預先獲取關聯資料
+    print(post.title)
+    for tag in post.tags.all():
+        print(tag.name)
+
+    print('=====')
+
+
+for comment in Comment.objects.select_related('post'):  # 從多往一，預先獲取關聯資料
+    print(comment.post.title)
+    print(comment.content)
+    print('=====')
