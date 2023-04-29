@@ -8,6 +8,8 @@ class Post(models.Model):
     content = models.TextField(max_length=500)
     is_public = models.BooleanField(default=True)
 
+    tags = models.ManyToManyField(to='Tag')
+
     def __str__(self):
         return self.title
 
@@ -21,3 +23,7 @@ class Comment(models.Model):
     # models.SET_DEFAULT：刪除 Post 時，將 Comment 中的 post 欄位設定成預設值
     # models.SET_NULL：刪除 Post 時，將 Comment 中的 post 欄位設定成 null    
     post = models.ForeignKey(to=Post, on_delete=models.CASCADE)
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=64, unique=True)
