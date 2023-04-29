@@ -7,6 +7,9 @@ from first.forms import PostForm, PostDeleteConfirmForm
 
 def post_list(request):
     posts = Post.objects.all()
+    if 'tag_id' in request.GET:
+        posts = posts.filter(tags__id=request.GET['tag_id'])
+        
     return render(request, "post_list.html", {"posts": posts})
 
 
