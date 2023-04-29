@@ -10,6 +10,9 @@ class Post(models.Model):
 
     tags = models.ManyToManyField(to='Tag')
 
+    # 自動產生的欄位
+    # comment_set => 代表了與 Comment 資料表的關聯（<model>_set）
+
     def __str__(self):
         return self.title
 
@@ -23,6 +26,9 @@ class Comment(models.Model):
     # models.SET_DEFAULT：刪除 Post 時，將 Comment 中的 post 欄位設定成預設值
     # models.SET_NULL：刪除 Post 時，將 Comment 中的 post 欄位設定成 null    
     post = models.ForeignKey(to=Post, on_delete=models.CASCADE)
+
+    # 自動產生的欄位
+    # post_id => 代表管連到的 Post 的 PK （<fk>_id）
 
 
 class Tag(models.Model):

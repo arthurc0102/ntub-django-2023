@@ -1,4 +1,4 @@
-from first.models import Post
+from first.models import Post, Comment
 
 
 # 建立 Post 方法一
@@ -65,3 +65,12 @@ post.delete()
 
 posts = Post.objects.filter(title='2222')
 posts.delete()
+
+# 關聯操作
+
+post = Post.objects.create(title='Title 001', content='Content 001')
+comment = Comment.objects.create(content='Comment 001', post=post)
+
+post.comment_set.all()  # 取得此篇 post 的所有留言
+comment.post  # 取得留言所屬的文章物件
+comment.post_id  # 去得留言 FK 的值
