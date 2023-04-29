@@ -22,3 +22,10 @@ class CommentForm(forms.ModelForm):
         model = Comment
         # fields = "__all__"
         exclude = ("post",)
+
+
+class CommentDeleteConfirmForm(forms.Form):
+    check = forms.BooleanField(
+        required=True,
+        label="你確定要刪除這篇留言嗎？真的會消失喔！！！",
+    )

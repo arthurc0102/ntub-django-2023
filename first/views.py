@@ -1,8 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 
-from first.models import Post
-from first.forms import PostForm, PostDeleteConfirmForm, CommentForm
+from first.models import Post, Comment
+from first.forms import (
+    PostForm,
+    PostDeleteConfirmForm,
+    CommentForm,
+    CommentDeleteConfirmForm,
+)
 
 
 def post_list(request):
@@ -69,3 +74,27 @@ def post_comment(request, post_id):
         return redirect("post_detail", post_id)
 
     return render(request, "post_comment.html", {"form": form})
+
+
+def comment_update(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    form = CommentForm(request.POST or None, instance=comment)
+    if form.is_valid():
+        comment = form.save()
+        messages.success(request, "留言編輯成功")
+        return redirect("post_detail", comment.post_id)
+
+    return render(request, "comment_update.html", {"form": form})
+
+
+def comment_delete(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    form = CommentDeleteConfirmForm(request.POST or None)
+    if form.is_valid():
+        comment.delete()
+        messages.success(request, "留言刪除成功")
+        return redirect("post_detail", comment.post_id)
+
+    return render(request, "comment_delete.html", {"form": form})

@@ -24,6 +24,8 @@ from first.views import (
     post_update,
     post_delete,
     post_comment,
+    comment_update,
+    comment_delete,
 )
 
 
@@ -40,4 +42,7 @@ urlpatterns = [
     path("post-update/<int:post_id>/", post_update, name="post_update"),
     path("post-delete/<int:post_id>/", post_delete, name="post_delete"),
     path("post-comment/<int:post_id>/", post_comment, name="post_comment"),
+    # 留言
+    path("comment-update/<int:comment_id>/", comment_update, name="comment_update"),
+    path("comment-delete/<int:comment_id>/", comment_delete, name="comment_delete"),
 ]
