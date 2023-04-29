@@ -1,4 +1,4 @@
-from first.models import Post, Comment
+from first.models import Post, Comment, Tag
 
 
 # 建立 Post 方法一
@@ -73,4 +73,18 @@ comment = Comment.objects.create(content='Comment 001', post=post)
 
 post.comment_set.all()  # 取得此篇 post 的所有留言
 comment.post  # 取得留言所屬的文章物件
-comment.post_id  # 去得留言 FK 的值
+comment.post_id  # 取得留言 FK 的值
+
+tag1 = Tag.objects.create(name='T01')
+tag2 = Tag.objects.create(name='T02')
+tag3 = Tag.objects.create(name='T03')
+
+post.tags.add(tag1, tag2)  # 將 tag1 與 tag2 和 post 建立關係
+
+post.tags.all()  # 取得此 post 的所有標籤
+tag1.post_set.all()  # 取得此標籤的所有文章
+
+post.tags.remove(tag1)  # 將 tag1 從與此文章的關係刪除
+post.tags.clear()  # 清除此文章的所有標籤
+
+post.tags.set([tag2, tag3])  # 將此文章的標籤關係覆蓋成 tag2 與 tag3，結果與先 clear 再 add 相同
