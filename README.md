@@ -1,3 +1,7 @@
+# Django Project
+
+## 指令們
+
 **請確保虛擬環境啟動 `poetry shell`**
 
 建立 poetry 專案（產生 pyproject.toml 檔案）：`poetry init`
@@ -32,3 +36,11 @@
 安裝 django-extensions: `poetry add django-extensions`
 
 進入 Django Shell Plus: `python manage.py shell_plus --print-sql`
+
+安裝 django-extensions: `poetry add --group dev werkzeug`
+
+進入 Django Runserver Plus: `python manage.py runserver_plus --print-sql`
+
+## 參考資料
+
+Template Tags: <https://docs.djangoproject.com/en/4.2/ref/templates/builtins/>

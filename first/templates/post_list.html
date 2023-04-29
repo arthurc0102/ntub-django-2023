@@ -27,6 +27,7 @@
             <th scope="col">#</th>
             <th scope="col">標題</th>
             <th scope="col">是否公開</th>
+            <th scope="col">標籤</th>
             <th scope="col">操作</th>
           </tr>
         </thead>
@@ -36,6 +37,7 @@
               <th scope="row">{{ post.id }}</th>
               <td>{{ post.title }}</td>
               <td>{{ post.is_public }}</td>
+              <td>{{ post.tags.all|join:', ' }}</td>
               <td>
                 <a class="btn btn-info btn-sm" href="{% url 'post_detail' post.id %}">詳情</a>
               </td>

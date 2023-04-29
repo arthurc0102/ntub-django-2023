@@ -6,7 +6,7 @@ from first.forms import PostForm, PostDeleteConfirmForm
 
 
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.prefetch_related('tags')
     if 'tag_id' in request.GET:
         posts = posts.filter(tags__id=request.GET['tag_id'])
         
