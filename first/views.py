@@ -6,10 +6,10 @@ from first.forms import PostForm, PostDeleteConfirmForm
 
 
 def post_list(request):
-    posts = Post.objects.prefetch_related('tags')
-    if 'tag_id' in request.GET:
-        posts = posts.filter(tags__id=request.GET['tag_id'])
-        
+    posts = Post.objects.prefetch_related("tags")
+    if "tag_id" in request.GET:
+        posts = posts.filter(tags__id=request.GET["tag_id"])
+
     return render(request, "post_list.html", {"posts": posts})
 
 
@@ -54,3 +54,7 @@ def post_delete(request, post_id):
         return redirect("post_list")
 
     return render(request, "post_delete.html", {"form": form})
+
+
+def post_comment(request, post_id):
+    return render(request, "post_comment.html")
