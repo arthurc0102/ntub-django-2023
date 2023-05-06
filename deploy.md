@@ -9,3 +9,6 @@
 進入虛擬環境：`poetry shell`
 
 啟動伺服器：`gunicorn --bind 0.0.0.0:8000 core.wsgi`
+
+安裝靜態文件工具：`poetry add whitenoise`
+文件：https://whitenoise.readthedocs.io/en/latest/django.html
