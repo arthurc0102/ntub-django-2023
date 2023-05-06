@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-inr-1dtbt@^x)=li1x55g5#n=iv9km!$v^5qpimw5m8tq1jv#l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # 允許來自所有 host 的請求
 
 
 # Application definition
@@ -139,3 +139,11 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+if not DEBUG:
+    import sys
+    import logging
+
+
+    logging.basicConfig(stream=sys.stderr)  # 將所有 log 導向 stderr

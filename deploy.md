@@ -13,7 +13,7 @@
 安裝靜態文件工具：`poetry add whitenoise`
 文件：https://whitenoise.readthedocs.io/en/latest/django.html
 
-背景啟動伺服器：`gunicorn --bind 0.0.0.0:8000 -w 4 --pid django.pid --log-file django.log core.wsgi --daemon`
+背景啟動伺服器：`gunicorn --bind 0.0.0.0:8000 -w 4 --pid django.pid --capture-output --log-file django.log core.wsgi --daemon`
 
 查看 pid：`cat django.pid`
 
